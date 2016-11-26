@@ -3,14 +3,82 @@
 @{
     ViewBag.Title = "Profil utilisateur";
 }
-<h3>@ViewBag.Title</h3>
-<div class="row" style="margin:0 auto;width:80%;padding-left: 10%;">
-    asdsad
-    <div class="col-md-10">
+<h1 style="text-align:center">@ViewBag.Title</h1>
+<div style="margin:0 auto;width:80%;">
+    <div id="useProfile" class="container img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
+
+
+        <div class="row" style="margin:10px">
+            <div>
+                <div id="infoUser" class="col-md-4 img-rounded" style="border:1px groove gray;height:100%;padding-bottom:5px">
+                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png"/>
+                    <div class="img-rounded" style="border:1px groove gray; margin-bottom:5px;margin-top:10px;text-align:center">
+                        Statistique sur Bob Joe
+                       
+                    </div>
+
+                    <div class="img-rounded" style="border:1px groove gray;margin-bottom:5px;margin-top:10px;text-align:center">
+                        Nombre de revues
+                        <div style="text-align:right;padding-right:5px">
+                            50
+                        </div>
+
+                    </div>
+                    <div class="img-rounded" style="border:1px groove gray; margin-bottom:5px;margin-top:10px;text-align:center">
+                        Date d'inscription
+                        <div style="text-align:right;padding-right:5px">
+                            2016/10/01
+                        </div>
+
+                    </div>
+                    <button class="btn btn-default" style="display:block;margin:0 auto;margin-top:50px">
+                        <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
+                        Afficher plus
+                    </button>
+
+                </div>
+            </div>
+
+            <div id="configUser" class="col-md-8">
+                <h2 style="text-align:center">Bob Joe</h2>
+                <div>
+                    <h3>Configurations</h3>
+                    <ul id="Config" style="border:groove gray;">
+                        <li><a>Configuration 1</a></li>
+                        <li><a>Configuration 2</a></li>
+                        <li><a>Configuration 3</a></li>
+                        <li><a>Configuration 4</a></li>
+                    </ul>
+
+                </div>
+                 <div>
+                    <h3>Configurations partagées</h3>
+                    <ul id="sharedConfig"style="border:groove gray;">
+                        <li><a>Configuration personnalise 1</a></li>
+                        <li><a>Configuration personnalise 2</a></li>
+                        <li><a>Configuration personnalise 3</a></li>
+                        <li><a>Configuration personnalise 4</a></li>
+                    </ul>
+
+                </div>
+                
+
+            <div>
+                <h3>Favoris</h3>
+                <ul id="favoritConfig" style="border:groove gray;">
+                    <li><a>Configuration favorite 1</a></li>
+                    <li><a>Configuration favorite 2</a></li>
+                    <li><a>Configuration favorite 3</a></li>
+                    <li><a>Configuration favorite 4</a></li>
+                </ul>
+            </div>
+            </div>
         </div>
     </div>
 
+</div>
 
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
