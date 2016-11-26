@@ -1,60 +1,82 @@
 ﻿@using GTI350TP4.Models
-@model LoginViewModel
+@model RegisterViewModel
 @{
     ViewBag.Title = "Connexion";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Utilisez un compte local pour vous connecter.</h4>
+<div class="row" style="margin:0 auto;width:80%;padding-left: 10%;">
+    <div class="col-md-10">
+                 <section id="loginForm" class="form-horizontal" style="margin:0 auto; width:100%">
+
+                <h4 style="text-align:center">Authentification.</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label", style ="max-width:80%" })
+                    <div class="col-md-8">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" , style="max-width:90%"})
                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label", style ="max-width:80%" })
+                    <div class="col-md-8">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", style = "max-width:90%" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
+               <div class="form-group">
+                    <div class="col-md-offset-7 col-md-10">
+                        <input type="submit" value="Se connecter" class="btn btn-default" />
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Connexion" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("S'inscrire comme nouvel utilisateur", "Register")
-                </p>
+                <hr />
+                     <h4 style="text-align:center">S'inscrire</h4>
+                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                     <div class="form-group">
+                         @Html.LabelFor(m => m.UserName, new { @class = "col-md-4 control-label", style = "max-width:80%" })
+                         <div class="col-md-8">
+                             @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", style = "max-width:90%" })
+                             @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         @Html.LabelFor(m => m.Password, new { @class = "col-md-4 control-label", style = "max-width:80%" })
+                         <div class="col-md-8">
+                             @Html.PasswordFor(m => m.Password, new { @class = "form-control", style = "max-width:90%" })
+                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                     <div class="form-group">
+                         @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-4 control-label", style = "max-width:80%" })
+                         <div class="col-md-8">
+                             @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", style = "max-width:90%" })
+                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         @Html.LabelFor(m => m.Email, new { @class = "col-md-4 control-label", style = "max-width:80%" })
+                         <div class="col-md-8">
+                             @Html.PasswordFor(m => m.Email, new { @class = "form-control", style = "max-width:90%" })
+                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+                     <div class="form-group">
+                         <div class="col-md-offset-7 col-md-10">
+                             @Html.ActionLink("S'inscire", "UserProfile", "Account", null, new { @class="btn btn-default", style="min-width:110px" })
+
+
+                         </div>
+                     </div>
+
                 @* Activer ceci une fois que la confirmation de votre compte est activée pour la fonctionnalité de réinitialisation du mot de passe
                     <p>
                         @Html.ActionLink("Vous avez oublié votre mot de passe ?", "ForgotPassword")
                     </p>*@
-            }
+        
         </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+ 
     </div>
 </div>
 

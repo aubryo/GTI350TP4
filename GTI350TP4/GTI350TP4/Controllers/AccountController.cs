@@ -163,7 +163,7 @@ namespace GTI350TP4.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email, Hometown = null };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -195,6 +195,12 @@ namespace GTI350TP4.Controllers
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
+        [AllowAnonymous]
+        public ActionResult UserProfile(string model)
+        {
+
+            return View("UserProfile", model);
         }
 
         //
