@@ -5,26 +5,27 @@
     margin-left: 1.7em;
     padding: 1em;
    
-    background-color: #428bca;
-    color: #fff;
+    
+
     max-height:10em;
 }
 
     .pdsa-summary-block .summary-background img,
     .pdsa-summary-block .summary-background div {
         margin-left: -0.2em;
-        padding:0.2em;
+      
         
         font-size: 8em;
         opacity: 0.3;
         width: 60%;
-        max-height:100%;
+        max-height:100px;
     }
 
     .pdsa-summary-block:hover .summary-background img:hover,
     .pdsa-summary-:hover .summary-background div:hover {
         opacity: 1;
     }
+
 
     .pdsa-summary-block .summary-body {
         position: absolute;
@@ -35,13 +36,14 @@
         .pdsa-summary-block .summary-body .summary-line-1 {
             text-align: right;
             font-size: medium;
-            margin-top: 1.5em;
+            margin-top: 1.0em;
+            margin-right: 2em;
         }
 
         .pdsa-summary-block .summary-body .summary-line-2 {
             text-align: right;
             font-size: small;
-            margin-top: 0.5em;
+            margin-right: 3em;
         }
 
     .pdsa-summary-block .summary-footer {
