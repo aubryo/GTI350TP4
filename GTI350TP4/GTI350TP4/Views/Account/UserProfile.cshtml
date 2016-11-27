@@ -25,16 +25,13 @@
 
                     </div>
                     <div class="img-rounded" style="border:1px groove gray; margin-bottom:5px;margin-top:10px;text-align:center">
-                        Date d'inscription
+                        Membre depuis
                         <div style="text-align:right;padding-right:5px">
                             2016/10/01
                         </div>
 
                     </div>
-                    <button class="btn btn-default" style="display:block;margin:0 auto;margin-top:50px">
-                        <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
-                        Afficher plus
-                    </button>
+                    @Html.ActionLink("Afficher plus", "CreateConfiguration", "Account", null, new { @class = "btn btn-default", style="display:block;margin:0 auto;margin-top:50px" })
 
                 </div>
             </div>

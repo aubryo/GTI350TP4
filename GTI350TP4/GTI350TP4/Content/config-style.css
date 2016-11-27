@@ -1,0 +1,93 @@
+﻿
+.pdsa-summary-block {
+    position: relative;
+    width: 100%;
+    margin-left: 1.7em;
+    padding: 1em;
+   
+    background-color: #428bca;
+    color: #fff;
+    max-height:10em;
+}
+
+    .pdsa-summary-block .summary-background img,
+    .pdsa-summary-block .summary-background div {
+        margin-left: -0.2em;
+        padding:0.2em;
+        
+        font-size: 8em;
+        opacity: 0.3;
+        width: 60%;
+        max-height:100%;
+    }
+
+    .pdsa-summary-block:hover .summary-background img:hover,
+    .pdsa-summary-:hover .summary-background div:hover {
+        opacity: 1;
+    }
+
+    .pdsa-summary-block .summary-body {
+        position: absolute;
+        top: 1.3em;
+        right: 0.8em;
+    }
+
+        .pdsa-summary-block .summary-body .summary-line-1 {
+            text-align: right;
+            font-size: medium;
+            margin-top: 1.5em;
+        }
+
+        .pdsa-summary-block .summary-body .summary-line-2 {
+            text-align: right;
+            font-size: small;
+            margin-top: 0.5em;
+        }
+
+    .pdsa-summary-block .summary-footer {
+        position: absolute;
+        background-color: blue;
+        bottom: 0em;
+        right: 0em;
+        width: 100%;
+        padding: 0.4em;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: small;
+        opacity: 0.6;
+    }
+
+        .pdsa-summary-block .summary-footer a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .pdsa-summary-block .summary-footer:hover {
+            opacity: 1;
+        }
+
+.step-progression-block {
+    padding-bottom: 30px;
+ 
+}
+
+    .step-progression-block .step-progression-body {
+        padding-bottom: 20px;
+        max-height:100px;
+        max-width:100px;
+    }
+
+    .step-progression-block .step-progression-footer {
+        max-height: 40px;
+        max-width: 40px;
+        margin-top: -50px;
+    }
+
+    .step-progression-block .step-progression-header {
+    text-align:center;
+   display:block;
+   margin:0 auto;
+   margin-left:-20px;
+   font-size:medium;
+    }
+

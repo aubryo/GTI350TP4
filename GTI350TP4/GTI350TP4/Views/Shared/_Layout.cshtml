@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body style="padding-top:0px">
      <nav class="navbar navbar-default" role="navigation">
@@ -58,6 +59,7 @@
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
+    <script src="~/Scripts/config-jquery.js"></script>
 </body>
 </html>
