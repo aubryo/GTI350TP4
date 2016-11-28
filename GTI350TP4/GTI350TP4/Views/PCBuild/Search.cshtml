@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "Trouver une configuration";
+}
+
+@section Styles{
+	@Styles.Render("~/Content/PCBuild.css")
+}
+
+<h2>Trouver une configuration</h2>
+
+<div class="container">
+	<div id="search-container" class="col-md-3 col-sm-4">
+		<form id="searchForm">
+			<div class="title">Trier les résultats</div>
+			<hr />
+			<div class="radio">
+				<label><input type="radio" id="order-rating" name="order" checked /> Par meilleur cote</label>
+			</div>
+			<div class="radio">
+				<label><input type="radio" id="order-name" name="order" /> Par nom</label>
+			</div>
+			<div class="radio">
+				<label><input type="radio" id="order-author" name="order" /> Par auteur</label>
+			</div>
+			<div class="radio">
+				<label><input type="radio" id="order-pricing" name="order" /> Par budget</label>
+			</div>
+			<hr />
+			<div class="title">Filtre de recherche</div>
+			<hr />
+			<div class="form-group">
+				<label for="build-name">Par nom :</label>
+				<input type="text" class="form-control" id="build-name" placeholder="Nom de la configuration" />
+			</div>
+			<div class="form-group">
+				<label for="build-name">Par auteur :</label>
+				<input type="text" class="form-control" id="build-author" placeholder="Nom d'utilisateur" />
+			</div>
+			<hr />
+			<div class="form-group">
+				<label>Par budget entre :</label><br />
+				<input type="number" class="form-control" id="build-pricing-min" placeholder="0" step="100" /> et 
+				<input type="number" class="form-control" id="build-pricing-max" placeholder="∞" step="100" />
+			</div>
+		</form>
+	</div>
+	<div id="results-container" class="col-md-9 col-sm-8" style="display:inline">
+		<div class="title">Résultats</div>
+		<div class="results-container">
+			<table id="search-results" class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th class="col-sm-6">Nom</th>
+						<th class="col-sm-4">Auteur</th>
+						<th class="col-sm-2">Budget</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<i id="no-results" class="hidden">Aucun résultats trouvés</i>
+		</div>
+		<div class="pageNav col-sm-12">
+			<span class="nav-prev"><a href="#"><< Précédent</a></span>
+			<span class="nav-pages"><b>1</b></span>
+			<span class="nav-next"><a href="#">Suivant >></a></span>
+		</div>
+	</div>
+</div>
+
+@section Scripts{
+	<script>
+		$(document).ready(function () {
+			var defaultData = [
+				{ name: "Configuration #CCCD", rating: 4, pricing: 535, user: "Utilisateur" },
+				{ name: "Configuration #ADCF", rating: 5, pricing: 1086, user: "Username" },
+				{ name: "Configuration #EEEB", rating: 2, pricing: 537, user: "Utilisateur" },
+				{ name: "Configuration #CFBE", rating: 3, pricing: 988, user: "Admin" },
+				{ name: "Configuration #DAGA", rating: 3, pricing: 615, user: "Admin" },
+				{ name: "Configuration #GDGB", rating: 2, pricing: 860, user: "Username" },
+				{ name: "Configuration #EDBC", rating: 2, pricing: 541, user: "Utilisateur" },
+				{ name: "Configuration #DAAA", rating: 1, pricing: 886, user: "Admin" },
+				{ name: "Configuration #EDDG", rating: 0, pricing: 615, user: "Username" },
+				{ name: "Configuration #GEAA", rating: 0, pricing: 695, user: "Admin" },
+				{ name: "Configuration #DCCA", rating: 1, pricing: 450, user: "Utilisateur" },
+				{ name: "Configuration #DBBD", rating: 1, pricing: 789, user: "Username" },
+				{ name: "Configuration #ABCA", rating: 3, pricing: 445, user: "Admin" },
+				{ name: "Configuration #ACAA", rating: 3, pricing: 1537, user: "Utilisateur" },
+				{ name: "Configuration #CFGC", rating: 2, pricing: 1110, user: "Username" }
+			];
+			var dataSet;
+
+			updateResults();
+
+			$("#searchForm input").keyup(updateResults);
+			$("#searchForm input").change(updateResults);
+
+			function updateResults() {
+				// Clear old results
+				dataSet = defaultData.slice();
+
+				// Apply filters on results
+
+				dataSet = dataSet.filter(filterByName);
+				dataSet = dataSet.filter(filterByAuthor);
+				dataSet = dataSet.filter(filterByPricing);
+
+				// Apply sort on results
+				
+				var sortOption = $('input[name=order]:checked').attr("id");
+
+				switch (sortOption) {
+					case "order-name": dataSet.sort(sortByName); break;
+					case "order-author": dataSet.sort(sortByAuthor); break;
+					case "order-pricing": dataSet.sort(sortByPricing); break;
+					default: dataSet.sort(sortByRating);
+				}
+
+				// Display new results
+
+				$("#search-results tbody").empty();
+				for (i = 0; i < dataSet.length; i++) {
+					var currentRow = "#search-results tbody tr:nth-child(" + (i + 1) + ")";
+					$("#search-results tbody").append("<tr />");
+
+					var strRatingStars = "<span class='ratingStars'>"
+					for (j = 0; j < 5; j++) {
+						if (j < dataSet[i].rating) {
+							strRatingStars += "<span class='glyphicon glyphicon-star'></span>"
+						} else {
+							strRatingStars += "<span class='glyphicon glyphicon-star-empty'></span>"
+						}
+					}
+					strRatingStars += "<span> (" + dataSet[i].rating + "/5)</span></span>"
+
+					var buildURL = "@Url.Action("v", "PCBuild")";
+
+					$(currentRow).append("<td><a class='buildPageUrl' href='" + buildURL + "'>" + dataSet[i].name + strRatingStars + "</td>");
+					$(currentRow).append("<td><a href='#'>" + dataSet[i].user + "</a></td>");
+					$(currentRow).append("<td>" + dataSet[i].pricing + " $</td>");
+				}
+			}
+		});
+
+		function sortByRating(a, b) {
+			return (a.rating > b.rating) ? -1 : 1;
+		}
+		function sortByName(a, b) {
+			return (a.name < b.name) ? -1 : 1;
+		}
+		function sortByAuthor(a, b) {
+			return (a.user < b.user) ? -1 : 1;
+		}
+		function sortByPricing(a, b) {
+			return (a.pricing > b.pricing) ? -1 : 1;
+		}
+		function filterByName(val) {
+			return val.name.includes($("#build-name").val());
+		}
+		function filterByAuthor(val) {
+			return val.user.includes($("#build-author").val());
+		}
+		function filterByPricing(val) {
+			return (val.pricing > $("#build-pricing-min").val() || $("#build-pricing-min").val() == "") &&
+				(val.pricing < $("#build-pricing-max").val() || $("#build-pricing-max").val() == "");
+		}
+	</script>
+}
