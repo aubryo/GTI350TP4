@@ -57,13 +57,29 @@
 				</thead>
 				<tbody></tbody>
 			</table>
-			<i id="no-results" class="hidden">Aucun résultats trouvés</i>
+			<div id="no-results" style="display: none;">
+				<i>Aucun résultats trouvés</i>
+			</div>
 		</div>
-		<div class="pageNav col-sm-12">
-			<span class="nav-prev"><a href="#"><< Précédent</a></span>
-			<span class="nav-pages"><b>1</b></span>
-			<span class="nav-next"><a href="#">Suivant >></a></span>
-		</div>
+		<nav class="pageNav" aria-label="Page navigation">
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
 </div>
 
@@ -138,6 +154,11 @@
 					$(currentRow).append("<td><a href='#'>" + dataSet[i].user + "</a></td>");
 					$(currentRow).append("<td>" + dataSet[i].pricing + " $</td>");
 				}
+
+				if (dataSet.length == 0)
+					$("#no-results").show();
+				else
+					$("#no-results").hide();
 			}
 		});
 

@@ -1,4 +1,6 @@
-﻿#search-container, #results-container {
+﻿/* PC build search page */
+
+#search-container, #results-container {
 	display			: inline;
 	border			: 1px solid #444444;
 }
@@ -68,10 +70,43 @@ a.buildPageUrl {
 	display			: block;
 }
 
-.pageNav {
-	margin-bottom	: 15px;
+#no-results {
 	text-align		: center;
 }
 
-.pageNav span.nav-prev {float:left}
-.pageNav span.nav-next {float:right}
+.pageNav {
+	text-align		: center;
+}
+
+/* PC build view page */
+
+#config-name-title h2 {
+	display			: inline-block;
+}
+
+.build-actions-menu {
+	margin-top		: -10px;
+	margin-left		: 10px;
+}
+
+#config-stats {
+	margin			: -2px 0 5px 0;
+}
+
+#config-stats > span {
+	margin-right	: 15px;
+}
+
+#config-stats > .seperator {
+	border-left		: 1px solid #444444;
+}
+
+.ratingStars-big .glyphicon, .addToFavorites .glyphicon {
+	font-size		: 1.3em;
+	color			: #505050;
+	top				: 4px;
+}
+
+#review-zone textarea {
+	max-width		: none;
+}

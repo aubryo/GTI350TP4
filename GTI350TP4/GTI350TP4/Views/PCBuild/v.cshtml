@@ -1,8 +1,89 @@
 ﻿
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "Titre de la config";
 }
 
-<h2>View</h2>
-<h2>@ViewBag.Id</h2>
+@section Styles{
+	@Styles.Render("~/Content/PCBuild.css")
+}
 
+<div id="config-name-title">
+	<h2>Titre de la configuration</h2>
+	<div class="build-actions-menu btn-group">
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="buildActionsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Actions <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="buildActionsMenu">
+				<li><a href="#">Modifier</a></li>
+				<li><a href="#">Supprimer</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="config-stats">
+	<span class="ratingStars-big">
+		<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span>
+		<span class="helper">(3/5)</span>
+	</span>
+	<span class="seperator"></span>
+	<span class="addToFavorites">
+		<a href="#">
+			<span class="glyphicon glyphicon-heart-empty"></span>
+			<span class="helper">Ajouter à ses favoris</span>
+		</a>
+	</span>
+	<span class="seperator"></span>
+	<span class="authorName">
+		Par <a href="@Url.Action("UserProfile", "Account")">Nom d'utilisateur</a>
+	</span>
+</div>
+<hr />
+<div class="panel panel-default">
+	<div class="panel-heading">Sommaire de la configuration</div>
+	<p>
+		<ul>
+			<li>...</li>
+			<li>...</li>
+			<li>...</li>
+		</ul>
+	</p>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">Composantes</div>
+	<div class="panel-body">
+
+	</div>
+</div>
+<hr />
+<h4>Revues par les utilisateurs (327 total)</h4>
+<div id="review-zone" class="container">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+		<div class="form-group">
+			<textarea class="form-control" id="review-content" rows="4" placeholder="Laisser une revue"></textarea>
+		</div>
+		<button id="submit-review" class="btn btn-primary pull-right">Enregistrer</button>
+		<br />
+		<nav class="pageNav" aria-label="Page navigation">
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="col-sm-2"></div>
+</div>
