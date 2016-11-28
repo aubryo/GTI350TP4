@@ -23,19 +23,17 @@
                 </div>
 
                 <div class="form-group">
-                    @Html.LabelFor(m => m.maxPrice, new { @class = "col-md-2 control-label", style = "margin-top:25px" })
-                    <div class="col-md-2">
-                        @Html.TextBoxFor(m => m.maxPrice, new { @class = "form-control", style = "max-width:100%;margin-top:20px" })
+                  
+                    <div class="col-md-5">
+                        @Html.LabelFor(m => m.maxPrice, new { @class = "col-md-4 control-label", style = "margin-top:25px" })
+                        @Html.TextBoxFor(m => m.maxPrice, new { @class = "form-control", style = "max-width:100px;margin-top:20px" })
                         @Html.ValidationMessageFor(m => m.maxPrice, "", new { @class = "text-danger" })
-
-
                     </div>
-                    <div class="col-md-8">
-                        @Html.LabelFor(m => m.description, new { @class = "col-md-2 control-label", style = "margin-top:25px" })
-                        @Html.TextAreaFor(m => m.description, new { @class = "col-md-6 form-control", style = "max-width:83%;margin-bottom:10px;margin-top:20px;max-height:36px" })
+                    <div class="col-md-7">
+                        @Html.LabelFor(m => m.description, new { @class = "col-md-2 control-label", style = "margin-left:-40px;margin-top:25px" })
+                        @Html.TextAreaFor(m => m.description, new { @class = "col-md-6 form-control", style = "max-width:90%;margin-bottom:10px;margin-top:20px;max-height:36px" })
                     </div>
-                    <div class="form-group">
-                    </div>
+                   
                 </div>
 
 
@@ -44,7 +42,7 @@
             <h3>Progression</h3>
             <div id="progression" class="img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
                 <div id="boitier" step="1" class="col-sm-2" style="padding:0;max-width:138px;">
-                    <div class="step-progression-block" selected="true" style="opacity:1">
+                    <div class="step-progression-block" selected="selected" style="opacity:1">
                         <div class="step-progression-header">
                             <span>Boitier</span>
                         </div>
@@ -173,19 +171,18 @@
                     <div class="row">
                         <div class="col-sm-3" style="padding:0;margin-left:1.7em">
                             <div id="piece1" piece-type="boitier" class="pdsa-summary-block">
-                                Nom de la piece
+                                
                                 <div class="summary-background">
-                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                    <img src="http://media.ldlc.com/ld/products/00/00/98/05/LD0000980501_1.jpg" />
                                 </div>
 
                                 <div class="summary-body">
                                     <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
-                                            <li># Spec</li>
-                                            <li>3.3 GHz</li>
-                                          
-                                            <li>Prix $</li>
+                                            <li>USB Slot:3</li>
+                                            <li>Dim: 30x25</li>
+                                            <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -200,19 +197,19 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece2" piece-type="boitier" class="pdsa-summary-block">
-                                Nom de la piece
+                                
                                 <div class="summary-background">
-                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                    <img src="http://i2.cdscdn.com/pdt2/a/b/t/1/700x700/eca3321abt/rw/enermax-boitier-pc-thorex-eca3321a-bt-2u3.jpg" />
                                 </div>
 
                                 <div class="summary-body">
                                     <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
-                                            <li># Spec</li>
-                                            <li>3.3 GHz</li>
-                                        
-                                            <li>Prix $</li>
+                                            <li>USB Slot:4</li>
+                                            <li>Dim: 40x30</li>
+                                           
+                                            <li>"Prix: 75.00$</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -227,19 +224,19 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece3" piece-type="boitier" class="pdsa-summary-block">
-                                Nom de la piece
+                               
                                 <div class="summary-background">
-                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                    <img src="http://i2.cdscdn.com/pdt2/8/8/5/1/700x700/adv3700104417885/rw/advance-boitier-pc-gamer-darktrooper.jpg" />
                                 </div>
 
                                 <div class="summary-body">
                                     <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
-                                            <li># Spec</li>
-                                            <li>3.3 GHz</li>
-                               
-                                            <li>Prix $</li>
+                                            <li>USB Slot:5</li>
+                                            <li>Dim: 50x40</li>
+                                            
+                                            <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -254,19 +251,19 @@
                         </div>
                         <div class="col-sm-3" style="padding:0;margin-left:1.7em">
                             <div id="piece4" piece-type="boitier" class="pdsa-summary-block">
-                                Nom de la piece
+                               
                                 <div class="summary-background">
-                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                    <img src="http://img.clubic.com/download/image.php?id=04556408&h=0156&w=0156&crop=2&options=YToxOntzOjU6ImNvbG9yIjtzOjU6IndoaXRlIjt9" />
                                 </div>
 
                                 <div class="summary-body">
                                     <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
-                                            <li># Spec</li>
-                                            <li>3.3 GHz</li>
-                                 
-                                            <li>Prix $</li>
+                                            <li>USB Slot:3</li>
+                                            <li>Dim: 35x30</li>
+                                     
+                                            <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -281,18 +278,18 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece5" piece-type="boitier" class="pdsa-summary-block">
-                                Nom de la piece
+                               
                                 <div class="summary-background">
-                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                    <img src="http://microtek.fr/wp-content/uploads/2011/12/boitier1.jpg" />
                                 </div>
 
                                 <div class="summary-body">
                                     <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
-                                            <li># Spec</li>
-                                            <li>3.3 GHz</li>
-                                            <li>Prix $</li>
+                                            <li>USB Slot:2</li>
+                                            <li>Dim: 30x25</li>
+                                            <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -307,18 +304,18 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece6" piece-type="boitier" class="pdsa-summary-block">
-                                Nom de la piece
+                               
                                 <div class="summary-background">
-                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                    <img src="http://media.ldlc.com/ld/products/00/00/98/05/LD0000980501_1.jpg" />
                                 </div>
 
                                 <div class="summary-body">
                                     <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
-                                            <li># Spec</li>
-                                            <li>3.3 GHz</li>
-                                             <li>Prix $</li>
+                                            <li>USB Slot:2</li>
+                                            <li>Dim: 25x25</li>
+                                             <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
                                 </div>
