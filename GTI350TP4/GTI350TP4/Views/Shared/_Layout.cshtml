@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <title>@ViewBag.Title Configuration pc personnalisée</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -11,7 +11,7 @@
 
 </head>
 <body style="padding-top:0px">
-     <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="navbar-header" style="width: 100%">
             <div class="container-fluid">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,43 +21,43 @@
                 </button>
                 <div class="navbar-collapse collapse">
                     <div class="nav navbar-nav navbar-left">
-                          <a class="btn btn-default" style="padding: 13px 12px" href="@Url.Action("viewConfiguration","Account")">
+                        <a class="btn btn-default" style="padding: 13px 12px" href="@Url.Action("viewConfiguration","Account")">
                             <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
                             Configuration en ligne
-                       </a>
-                         <a class="btn btn-default" style="padding: 13px 12px" href="@Url.Action("CreateConfiguration","Account")">
-                              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </a>
+                        <a class="btn btn-default" style="padding: 13px 12px" href="@Url.Action("CreateConfiguration","Account")">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             Nouvelle configuration
                         </a>
                     </div>
                     <div class="nav navbar-nav navbar-right">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" style="padding: 13px 12px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Bob Joe <span class="caret"> </span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Profil</a></li>
-                            <li><a class="dropdown-item" href="#">Paramètre</a></li>
-                            <li><a class="dropdown-item" href="#">Se déconnecter</a></li>
-                        </ul>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" style="padding: 13px 12px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Bob Joe <span class="caret"> </span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profil</a></li>
+                                <li><a class="dropdown-item" href="#">Paramètre</a></li>
+                                <li><a class="dropdown-item" href="#">Se déconnecter</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-             </div>
-                </div>
+            </div>
 
         </div>
-        </nav>
-        <div class="container body-content" style="margin: 0 auto">
-            @RenderBody()
-            @RenderSection("SPAViews", required: false)
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Mon Pc personnalisé</p>
-            </footer>
-        </div>
+    </nav>
+    <div class="container body-content" style="margin: 0 auto">
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mon Pc personnalisé</p>
+        </footer>
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
     <script src="~/Scripts/config-jquery.js"></script>
     <script src="~/Scripts/config.js"></script>

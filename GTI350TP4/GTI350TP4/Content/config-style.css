@@ -2,7 +2,7 @@
 .pdsa-summary-block {
     position: relative;
     width: 100%;
-    margin-left: 1.7em;
+    
     padding: 1em;
    
     
@@ -70,13 +70,14 @@
 
 .step-progression-block {
     padding-bottom: 30px;
- 
+    opacity:0.5;
 }
 
     .step-progression-block .step-progression-body {
         padding-bottom: 20px;
         max-height:100px;
         max-width:100px;
+       
     }
 
     .step-progression-block .step-progression-footer {

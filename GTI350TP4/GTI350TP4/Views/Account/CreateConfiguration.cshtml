@@ -2,6 +2,8 @@
 @model ConfigurationViewModel
 @{
     ViewBag.Title = "Nouvelle configuration";
+    var spec = new ConfigurationViewModel();
+    
 }
 
 <link href="~/Content/config-style.css" rel="stylesheet" />
@@ -41,14 +43,14 @@
 
             <h3>Progression</h3>
             <div id="progression" class="img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
-                <div id="boitier" class="col-sm-2" style="padding:0;max-width:138px;">
-                    <div class="step-progression-block">
+                <div id="boitier" step="1" class="col-sm-2" style="padding:0;max-width:138px;">
+                    <div class="step-progression-block" selected="true" style="opacity:1">
                         <div class="step-progression-header">
                             <span>Boitier</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://findicons.com/files/icons/76/icandy_junior/128/pc_case.png" style="max-height:100px;max-width:100px;" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-green/bfa/bfa_check-circle/bfa_check-circle_simple-green_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -57,14 +59,14 @@
                     </div>
 
                 </div>
-                <div id="processeur" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="processeur" step="2" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
                             <span>Processeur</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://www.icone-png.com/png/53/52616.png" style="max-height:100px;max-width:100px;padding-top:20px;" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -73,14 +75,14 @@
                     </div>
 
                 </div>
-                <div id="ram" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="ram" step="3" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
                             <span>Ram</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://www.iconarchive.com/download/i60174/zerode/plump/Device-RAM.ico" style="max-height:100px;max-width:100px;" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -89,14 +91,14 @@
                     </div>
 
                 </div>
-                <div id="hardrive" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="hardrive" step="4" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
-                            <span>Boitier</span>
+                            <span>Disque dur</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://www.iconarchive.com/download/i13485/harwen/simple/Hard-Drive.ico" style="max-height:100px;max-width:100px;" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -105,14 +107,14 @@
                     </div>
 
                 </div>
-                <div id="motherboard" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="motherboard" step="5" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
                             <span>Carte mère</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://icons.iconarchive.com/icons/icons-land/vista-hardware-devices/256/Motherboard-icon.png" style="max-height:100px;max-width:100px;" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -121,14 +123,14 @@
                     </div>
 
                 </div>
-                <div id="graphicCard" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="graphicCard"  step="6" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
-                            <span>Boitier</span>
+                            <span>Carte graphique</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://www.iconarchive.com/download/i3666/babasse/bagg-and-boxs/carte-graphique.ico" style="max-height:100px;max-width:100px" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -137,14 +139,14 @@
                     </div>
 
                 </div>
-                <div id="peripherique" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="peripherique" step="7" selected="false" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
-                            <span>Boitier</span>
+                            <span>Périphériques</span>
                         </div>
-                        <div class="step-progression-body">
+                        <a class="step-progression-body">
                             <img src="http://st2.depositphotos.com/2376545/10847/v/950/depositphotos_108470314-stock-illustration-computer-peripheral-icon.jpg" style="max-height:100px;max-width:100px" />
-                        </div>
+                        </a>
                         <div class="step-progression-footer">
                             <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
@@ -169,15 +171,15 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-3" style="padding:0">
-                            <div class="pdsa-summary-block">
+                        <div class="col-sm-3" style="padding:0;margin-left:1.7em">
+                            <div id="piece1" piece-type="boitier" class="pdsa-summary-block">
                                 Nom de la piece
                                 <div class="summary-background">
                                     <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
                                 </div>
 
                                 <div class="summary-body">
-                                    <div class="summary-line-1">Sommaire       </div>
+                                    <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
                                             <li># Spec</li>
@@ -197,14 +199,14 @@
 
                         </div>
                         <div class="col-sm-3" style="padding:0">
-                            <div class="pdsa-summary-block">
+                            <div id="piece2" piece-type="boitier" class="pdsa-summary-block">
                                 Nom de la piece
                                 <div class="summary-background">
                                     <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
                                 </div>
 
                                 <div class="summary-body">
-                                    <div class="summary-line-1">14       </div>
+                                    <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
                                             <li># Spec</li>
@@ -224,14 +226,14 @@
 
                         </div>
                         <div class="col-sm-3" style="padding:0">
-                            <div class="pdsa-summary-block">
+                            <div id="piece3" piece-type="boitier" class="pdsa-summary-block">
                                 Nom de la piece
                                 <div class="summary-background">
                                     <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
                                 </div>
 
                                 <div class="summary-body">
-                                    <div class="summary-line-1">14       </div>
+                                    <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
                                             <li># Spec</li>
@@ -250,15 +252,15 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-3" style="padding:0">
-                            <div class="pdsa-summary-block">
+                        <div class="col-sm-3" style="padding:0;margin-left:1.7em">
+                            <div id="piece4" piece-type="boitier" class="pdsa-summary-block">
                                 Nom de la piece
                                 <div class="summary-background">
                                     <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
                                 </div>
 
                                 <div class="summary-body">
-                                    <div class="summary-line-1">14       </div>
+                                    <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
                                             <li># Spec</li>
@@ -278,14 +280,14 @@
 
                         </div>
                         <div class="col-sm-3" style="padding:0">
-                            <div class="pdsa-summary-block">
+                            <div id="piece5" piece-type="boitier" class="pdsa-summary-block">
                                 Nom de la piece
                                 <div class="summary-background">
                                     <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
                                 </div>
 
                                 <div class="summary-body">
-                                    <div class="summary-line-1">14       </div>
+                                    <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
                                             <li># Spec</li>
@@ -304,14 +306,14 @@
 
                         </div>
                         <div class="col-sm-3" style="padding:0">
-                            <div class="pdsa-summary-block">
+                            <div id="piece6" piece-type="boitier" class="pdsa-summary-block">
                                 Nom de la piece
                                 <div class="summary-background">
                                     <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
                                 </div>
 
                                 <div class="summary-body">
-                                    <div class="summary-line-1">14       </div>
+                                    <div class="summary-line-1">Sommaire</div>
                                     <div class="summary-line-2">
                                         <ul>
                                             <li># Spec</li>
@@ -335,13 +337,13 @@
 
             </div>
             <div class="row">
-                <button class="btn btn-default" style="padding: 13px 12px;margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
+                <button class="btn btn-default" id="previousStep" style="padding: 13px 12px;margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
                     <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
 
 
                     Étape précédente
                 </button>
-                <button class="btn btn-default" style="padding: 13px 12px;float: right!important;margin-right: 20px;margin-top: 10px;margin-bottom: 10px;">
+                <button class="btn btn-default" id="nextStep" style="padding: 13px 12px;float: right!important;margin-right: 20px;margin-top: 10px;margin-bottom: 10px;">
                     Étape suivante
                     <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 
