@@ -13,11 +13,6 @@ namespace GTI350TP4.Controllers
 			return View();
 		}
 
-		public ActionResult Search()
-		{
-			return View();
-		}
-
 		public ActionResult v()
 		{
 			return View();
