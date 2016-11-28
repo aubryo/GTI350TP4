@@ -8,11 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-<<<<<<< HEAD
 	@RenderSection("Styles", required: false)
-=======
-
->>>>>>> 22e690e6bedb4a0eb0ca93d30505e20398655e38
 </head>
 <body style="padding-top:0px">
     <nav class="navbar navbar-default" role="navigation">
@@ -25,16 +21,7 @@
                 </button>
                 <div class="navbar-collapse collapse">
                     <div class="nav navbar-nav navbar-left">
-<<<<<<< HEAD
-                        @Html.ActionLink("Nom de l'application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-						<a href="@Url.Action("Index", "PCBuild")" class="btn btn-default" style="padding:13px 12px">
-							<span class="glyphicon glyphicon-hdd" aria-hidden="true"></span> Configuration en ligne
-						</a>
-                        <button class="btn btn-default" style="padding: 13px 12px">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nouvelle configuration
-                        </button>
-=======
-                        <a class="btn btn-default" style="padding: 13px 12px" href="@Url.Action("viewConfiguration","Account")">
+                        <a class="btn btn-default" style="padding: 13px 12px" href="@Url.Action("Index","PCBuild")">
                             <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
                             Configuration en ligne
                         </a>
@@ -42,7 +29,6 @@
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                             Nouvelle configuration
                         </a>
->>>>>>> 22e690e6bedb4a0eb0ca93d30505e20398655e38
                     </div>
                     <div class="nav navbar-nav navbar-right">
                         <div class="btn-group">
