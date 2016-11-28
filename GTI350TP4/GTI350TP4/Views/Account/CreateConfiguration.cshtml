@@ -1,0 +1,357 @@
+﻿@using GTI350TP4.Models
+@model ConfigurationViewModel
+@{
+    ViewBag.Title = "Nouvelle configuration";
+    var spec = new ConfigurationViewModel();
+    
+}
+
+<link href="~/Content/config-style.css" rel="stylesheet" />
+<body>
+    <div style="margin:0 auto;width:90%;">
+        <div id="configuration" class="container img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.configName, new { @class = "col-md-3 control-label", style = "margin-top:20px" })
+                    <div class="col-md-6">
+                        @Html.TextBoxFor(m => m.configName, new { @class = "form-control", style = "max-width:90%;margin-top:15px" })
+                        @Html.ValidationMessageFor(m => m.configName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-3">
+                        @Html.ActionLink("Sauvegarder", "SaveConfiguration", "Account", null, new { @class = "btn btn-default", style = "display:block;margin:0 auto;margin-top:15px" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.maxPrice, new { @class = "col-md-2 control-label", style = "margin-top:25px" })
+                    <div class="col-md-2">
+                        @Html.TextBoxFor(m => m.maxPrice, new { @class = "form-control", style = "max-width:100%;margin-top:20px" })
+                        @Html.ValidationMessageFor(m => m.maxPrice, "", new { @class = "text-danger" })
+
+
+                    </div>
+                    <div class="col-md-8">
+                        @Html.LabelFor(m => m.description, new { @class = "col-md-2 control-label", style = "margin-top:25px" })
+                        @Html.TextAreaFor(m => m.description, new { @class = "col-md-6 form-control", style = "max-width:83%;margin-bottom:10px;margin-top:20px;max-height:36px" })
+                    </div>
+                    <div class="form-group">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <h3>Progression</h3>
+            <div id="progression" class="img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
+                <div id="boitier" step="1" class="col-sm-2" style="padding:0;max-width:138px;">
+                    <div class="step-progression-block" selected="true" style="opacity:1">
+                        <div class="step-progression-header">
+                            <span>Boitier</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://findicons.com/files/icons/76/icandy_junior/128/pc_case.png" style="max-height:100px;max-width:100px;" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-green/bfa/bfa_check-circle/bfa_check-circle_simple-green_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="processeur" step="2" class="col-sm-2" style="padding:0;max-width:141px;">
+                    <div class="step-progression-block">
+                        <div class="step-progression-header">
+                            <span>Processeur</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://www.icone-png.com/png/53/52616.png" style="max-height:100px;max-width:100px;padding-top:20px;" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="ram" step="3" class="col-sm-2" style="padding:0;max-width:141px;">
+                    <div class="step-progression-block">
+                        <div class="step-progression-header">
+                            <span>Ram</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://www.iconarchive.com/download/i60174/zerode/plump/Device-RAM.ico" style="max-height:100px;max-width:100px;" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="hardrive" step="4" class="col-sm-2" style="padding:0;max-width:141px;">
+                    <div class="step-progression-block">
+                        <div class="step-progression-header">
+                            <span>Disque dur</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://www.iconarchive.com/download/i13485/harwen/simple/Hard-Drive.ico" style="max-height:100px;max-width:100px;" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="motherboard" step="5" class="col-sm-2" style="padding:0;max-width:141px;">
+                    <div class="step-progression-block">
+                        <div class="step-progression-header">
+                            <span>Carte mère</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://icons.iconarchive.com/icons/icons-land/vista-hardware-devices/256/Motherboard-icon.png" style="max-height:100px;max-width:100px;" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="graphicCard"  step="6" class="col-sm-2" style="padding:0;max-width:141px;">
+                    <div class="step-progression-block">
+                        <div class="step-progression-header">
+                            <span>Carte graphique</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://www.iconarchive.com/download/i3666/babasse/bagg-and-boxs/carte-graphique.ico" style="max-height:100px;max-width:100px" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="peripherique" step="7" selected="false" class="col-sm-2" style="padding:0;max-width:141px;">
+                    <div class="step-progression-block">
+                        <div class="step-progression-header">
+                            <span>Périphériques</span>
+                        </div>
+                        <a class="step-progression-body">
+                            <img src="http://st2.depositphotos.com/2376545/10847/v/950/depositphotos_108470314-stock-illustration-computer-peripheral-icon.jpg" style="max-height:100px;max-width:100px" />
+                        </a>
+                        <div class="step-progression-footer">
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <h3>Selection piece</h3>
+            <div id="pieces" class="img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
+                <div class="row">
+                    <div id="buttonGroupFilter" class="col-lg-2" style="display: block; height:280px;">
+                        <div class="btn-group-vertical" role="group" data-toggle="buttons" aria-label="Button group with nested dropdown">
+                            <button type="button" class="btn btn-default" aria-label="..." style="min-height:70px">Trier par meilleur cote</button>
+                            <button type="button" class="btn btn-default" style="min-height:70px">Trier par popularité</button>
+
+                            <button type="button" class="btn btn-default" style="min-height:70px">Suggestions de l'équipe</button>
+                            <button id="filter" type="button" class="btn btn-default" style="min-height:70px;">Filtre personnalisé</button>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3" style="padding:0;margin-left:1.7em">
+                            <div id="piece1" piece-type="boitier" class="pdsa-summary-block">
+                                Nom de la piece
+                                <div class="summary-background">
+                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                </div>
+
+                                <div class="summary-body">
+                                    <div class="summary-line-1">Sommaire</div>
+                                    <div class="summary-line-2">
+                                        <ul>
+                                            <li># Spec</li>
+                                            <li>3.3 GHz</li>
+                                          
+                                            <li>Prix $</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="#">
+                                        Voir détails
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3" style="padding:0">
+                            <div id="piece2" piece-type="boitier" class="pdsa-summary-block">
+                                Nom de la piece
+                                <div class="summary-background">
+                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                </div>
+
+                                <div class="summary-body">
+                                    <div class="summary-line-1">Sommaire</div>
+                                    <div class="summary-line-2">
+                                        <ul>
+                                            <li># Spec</li>
+                                            <li>3.3 GHz</li>
+                                        
+                                            <li>Prix $</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="#">
+                                        Voir détails
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3" style="padding:0">
+                            <div id="piece3" piece-type="boitier" class="pdsa-summary-block">
+                                Nom de la piece
+                                <div class="summary-background">
+                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                </div>
+
+                                <div class="summary-body">
+                                    <div class="summary-line-1">Sommaire</div>
+                                    <div class="summary-line-2">
+                                        <ul>
+                                            <li># Spec</li>
+                                            <li>3.3 GHz</li>
+                               
+                                            <li>Prix $</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="#">
+                                        Voir détails
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3" style="padding:0;margin-left:1.7em">
+                            <div id="piece4" piece-type="boitier" class="pdsa-summary-block">
+                                Nom de la piece
+                                <div class="summary-background">
+                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                </div>
+
+                                <div class="summary-body">
+                                    <div class="summary-line-1">Sommaire</div>
+                                    <div class="summary-line-2">
+                                        <ul>
+                                            <li># Spec</li>
+                                            <li>3.3 GHz</li>
+                                 
+                                            <li>Prix $</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="#">
+                                        Voir détails
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3" style="padding:0">
+                            <div id="piece5" piece-type="boitier" class="pdsa-summary-block">
+                                Nom de la piece
+                                <div class="summary-background">
+                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                </div>
+
+                                <div class="summary-body">
+                                    <div class="summary-line-1">Sommaire</div>
+                                    <div class="summary-line-2">
+                                        <ul>
+                                            <li># Spec</li>
+                                            <li>3.3 GHz</li>
+                                            <li>Prix $</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="#">
+                                        Voir détails
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3" style="padding:0">
+                            <div id="piece6" piece-type="boitier" class="pdsa-summary-block">
+                                Nom de la piece
+                                <div class="summary-background">
+                                    <img src="http://aapars.com/marie-anne-grandmont/files/2010/10/user-icon-e1286135502728.png" />
+                                </div>
+
+                                <div class="summary-body">
+                                    <div class="summary-line-1">Sommaire</div>
+                                    <div class="summary-line-2">
+                                        <ul>
+                                            <li># Spec</li>
+                                            <li>3.3 GHz</li>
+                                             <li>Prix $</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="summary-footer">
+                                    <a href="#">
+                                        Voir détails
+                                        <i class="glyphicon glyphicon-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <button class="btn btn-default" id="previousStep" style="padding: 13px 12px;margin-left: 20px;margin-top: 10px;margin-bottom: 10px;">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+
+
+                    Étape précédente
+                </button>
+                <button class="btn btn-default" id="nextStep" style="padding: 13px 12px;float: right!important;margin-right: 20px;margin-top: 10px;margin-bottom: 10px;">
+                    Étape suivante
+                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+
+                </button>
+
+
+            </div>
+        </div>
+    </div>
+  
+</body>
