@@ -24,12 +24,12 @@
 
     .pdsa-summary-block:hover .summary-background img:hover,
     .pdsa-summary-:hover .summary-background div:hover {
-        opacity: 1;
+        opacity: 1!important;
     }
 
 
     .pdsa-summary-block .summary-body {
-        position: absolute;
+        position: absolute; 
         top: 0.6em;
         right: 0.8em;
     }
