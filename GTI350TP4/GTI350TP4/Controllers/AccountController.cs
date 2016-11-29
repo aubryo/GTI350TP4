@@ -27,6 +27,11 @@ namespace GTI350TP4.Controllers
             var r = new ConfigurationViewModel();
             return View("CreateConfiguration",r);
         }
+        [AllowAnonymous]
+        public void SaveConfiguration() {
+
+            
+        } 
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {

@@ -5,10 +5,19 @@ $(document).ready(function () {
 
 
     $("#filter").click(function () {
-        alert("Handler for .click() called.");
+        if ($("#filterPanel").hasClass("col-md-2"))  {
+            $("#filterPanel").remove();
+        }
+        else{
+           
+            $("body").append('<div class="col-md-2" style="position:fixed;bottom:70px;left:0;"id="filterPanel"><div class="panel panel-default"><div class="panel-heading" ><strong class="">Filtre personnalisé</strong></div><div class="panel-body"><div class="form-group"><label for="build-name">Par nom :</label><input type="text" class="form-control" id="build-name" placeholder="Nom de la pièce" /></div><div class="form-group"><label for="build-name">Par marque :</label><input type="text" class="form-control" id="build-author" placeholder="Nom marque"/></div><hr /><div class="form-group"><label>Par budget entre :</label><div class="col-md-12"><input type="number" class="form-control col-md-6" id="build-pricing-min" placeholder="0" step="100" style="max-width:40%;margin-left:-20px"/><div class="col-md-2" style="margin-top:10px">et</div><input type="number" class="form-control col-md-6" id="build-pricing-max" placeholder="∞" step="100" style="max-width:40%;margin-left:20px" /></div></div> <div><button id="activeFilter" type="button" class="btn btn-default" style="margin-top:20px;margin-left:35px">Activé filtre</button></div></div></div></div>');
+
+        }
+     });
+
+    $("#activeFilter").click(function () {
+
     });
-
-
     $("#processeur").find("a").click(function () {
         $(".step-progression-block").each(function (index) {
             $(this).css("opacity", 0.5);
@@ -136,7 +145,7 @@ $(document).ready(function () {
 
     });
     $("#piece2").click(function () {
-        if ($("#newStar") != "")
+        if ($("#newStar") !== "")
         {
             $("#newStar").remove();
             $(".summary-background").each(function (index) {

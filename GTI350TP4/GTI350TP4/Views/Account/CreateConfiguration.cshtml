@@ -3,11 +3,12 @@
 @{
     ViewBag.Title = "Nouvelle configuration";
     var spec = new ConfigurationViewModel();
-    
+
 }
 
 <link href="~/Content/config-style.css" rel="stylesheet" />
 <body>
+    
     <div style="margin:0 auto;width:90%;">
         <div id="configuration" class="container img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
             <div class="row">
@@ -23,7 +24,7 @@
                 </div>
 
                 <div class="form-group">
-                  
+
                     <div class="col-md-5">
                         @Html.LabelFor(m => m.maxPrice, new { @class = "col-md-4 control-label", style = "margin-top:25px" })
                         @Html.TextBoxFor(m => m.maxPrice, new { @class = "form-control", style = "max-width:100px;margin-top:20px" })
@@ -33,7 +34,7 @@
                         @Html.LabelFor(m => m.description, new { @class = "col-md-2 control-label", style = "margin-left:-40px;margin-top:25px" })
                         @Html.TextAreaFor(m => m.description, new { @class = "col-md-6 form-control", style = "max-width:90%;margin-bottom:10px;margin-top:20px;max-height:36px" })
                     </div>
-                   
+
                 </div>
 
 
@@ -121,7 +122,7 @@
                     </div>
 
                 </div>
-                <div id="graphicCard"  step="6" class="col-sm-2" style="padding:0;max-width:141px;">
+                <div id="graphicCard" step="6" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
                             <span>Carte graphique</span>
@@ -171,7 +172,7 @@
                     <div class="row">
                         <div class="col-sm-3" style="padding:0;margin-left:1.7em">
                             <div id="piece1" piece-type="boitier" class="pdsa-summary-block">
-                                
+
                                 <div class="summary-background">
                                     <img src="http://media.ldlc.com/ld/products/00/00/98/05/LD0000980501_1.jpg" />
                                 </div>
@@ -197,7 +198,7 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece2" piece-type="boitier" class="pdsa-summary-block">
-                                
+
                                 <div class="summary-background">
                                     <img src="http://i2.cdscdn.com/pdt2/a/b/t/1/700x700/eca3321abt/rw/enermax-boitier-pc-thorex-eca3321a-bt-2u3.jpg" />
                                 </div>
@@ -208,7 +209,7 @@
                                         <ul>
                                             <li>USB Slot:4</li>
                                             <li>Dim: 40x30</li>
-                                           
+
                                             <li>"Prix: 75.00$</li>
                                         </ul>
                                     </div>
@@ -224,7 +225,7 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece3" piece-type="boitier" class="pdsa-summary-block">
-                               
+
                                 <div class="summary-background">
                                     <img src="http://i2.cdscdn.com/pdt2/8/8/5/1/700x700/adv3700104417885/rw/advance-boitier-pc-gamer-darktrooper.jpg" />
                                 </div>
@@ -235,7 +236,7 @@
                                         <ul>
                                             <li>USB Slot:5</li>
                                             <li>Dim: 50x40</li>
-                                            
+
                                             <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
@@ -251,7 +252,7 @@
                         </div>
                         <div class="col-sm-3" style="padding:0;margin-left:1.7em">
                             <div id="piece4" piece-type="boitier" class="pdsa-summary-block">
-                               
+
                                 <div class="summary-background">
                                     <img src="http://img.clubic.com/download/image.php?id=04556408&h=0156&w=0156&crop=2&options=YToxOntzOjU6ImNvbG9yIjtzOjU6IndoaXRlIjt9" />
                                 </div>
@@ -262,7 +263,7 @@
                                         <ul>
                                             <li>USB Slot:3</li>
                                             <li>Dim: 35x30</li>
-                                     
+
                                             <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
@@ -278,7 +279,7 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece5" piece-type="boitier" class="pdsa-summary-block">
-                               
+
                                 <div class="summary-background">
                                     <img src="http://microtek.fr/wp-content/uploads/2011/12/boitier1.jpg" />
                                 </div>
@@ -304,7 +305,7 @@
                         </div>
                         <div class="col-sm-3" style="padding:0">
                             <div id="piece6" piece-type="boitier" class="pdsa-summary-block">
-                               
+
                                 <div class="summary-background">
                                     <img src="http://media.ldlc.com/ld/products/00/00/98/05/LD0000980501_1.jpg" />
                                 </div>
@@ -315,7 +316,7 @@
                                         <ul>
                                             <li>USB Slot:2</li>
                                             <li>Dim: 25x25</li>
-                                             <li>Prix: 50.00$</li>
+                                            <li>Prix: 50.00$</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -350,5 +351,5 @@
             </div>
         </div>
     </div>
-  
+
 </body>
