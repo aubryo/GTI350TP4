@@ -118,6 +118,7 @@ a.buildPageUrl {
 
 .ratingStars-big .glyphicon.active {
 	text-decoration: underline;
+	color: orange;
 }
 
 .component-row {
