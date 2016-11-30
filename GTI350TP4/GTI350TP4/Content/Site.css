@@ -34,3 +34,14 @@ textarea {
         padding: 10px 15px;
     }
 }
+
+.user-avatar {
+	top: 11px;
+	margin-top: -8px;
+	font-size: 32px;
+	border: 1px solid #444444;
+	padding: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}

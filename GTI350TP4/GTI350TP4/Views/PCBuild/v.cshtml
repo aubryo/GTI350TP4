@@ -23,14 +23,15 @@
 </div>
 <div id="config-stats">
 	<span class="ratingStars-big">
-		<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span>
+		<span class="glyphicon glyphicon-star" score="1"></span><span class="glyphicon glyphicon-star" score="2"></span><span class="glyphicon glyphicon-star" score="3"></span><span class="glyphicon glyphicon-star-empty" score="4"></span><span class="glyphicon glyphicon-star-empty" score="5"></span>
 		<span class="helper">(3/5)</span>
 	</span>
 	<span class="seperator"></span>
 	<span class="addToFavorites">
 		<a href="#">
 			<span class="glyphicon glyphicon-heart-empty"></span>
-			<span class="helper">Ajouter à ses favoris</span>
+			<span class="helper add">Ajouter à ses favoris</span>
+			<span class="helper remove hidden">Retirer de ses favoris</span>
 		</a>
 	</span>
 	<span class="seperator"></span>
@@ -43,16 +44,78 @@
 	<div class="panel-heading">Sommaire de la configuration</div>
 	<p>
 		<ul>
-			<li>...</li>
-			<li>...</li>
+			<li><b>Stockage : </b>1.0 TB</li>
+			<li><b>Mémoire : </b>8.0 GB</li>
 			<li>...</li>
 		</ul>
 	</p>
 </div>
 <div class="panel panel-default">
 	<div class="panel-heading">Composantes</div>
-	<div class="panel-body">
-
+	<div class="component-row">
+		<div class="component col-sm-2 selected">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="component col-sm-2">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="component col-sm-2">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="component col-sm-2">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="component col-sm-2">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="component col-sm-2">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="component col-sm-2">
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div id="component-description" class="panel-body">
+		<div class="panel-left pull-left">
+			<div class="component-image">
+				<span class="glyphicon glyphicon-hdd"></span>
+			</div>
+			<div><button class="btn btn-default">+ Détails</button></div>
+		</div>
+		<div class="panel-right">
+			<div class="component-brand pull-right">Logos fabricants</div>
+			<div class="component-name">Nom de la pièce</div>
+			<div class="component-details">
+				Voici les informations spécifiques à la pièce sélectionnée :
+				<ul>
+					<li>Modèle</li>
+					<li>etc.</li>
+					<li>...</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 <hr />
@@ -61,10 +124,48 @@
 	<div class="col-sm-2"></div>
 	<div class="col-sm-8">
 		<div class="form-group">
-			<textarea class="form-control" id="review-content" rows="4" placeholder="Laisser une revue"></textarea>
+			<textarea id="review-content-field" class="form-control" rows="4" placeholder="Laisser une revue"></textarea>
 		</div>
 		<button id="submit-review" class="btn btn-primary pull-right">Enregistrer</button>
-		<br />
+		<br /><br />
+		<div id="review-demo" class="well" style="display:none;">
+			<div class="review-infos">
+				<div class="pull-left">
+					<div class="review-user-avatar glyphicon glyphicon-user"></div>
+					<div class="review-user">
+						<div><a href="#">Nom d'utilisateur</a></div>
+						<div>11/30/2016</div>
+					</div>
+				</div>
+				<div class="pull-right">
+					<div class="ratingStars-small">
+						<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
+						<span class="helper">(5/5)</span>
+					</div>
+				</div>
+			</div>
+			<div class="review-content"></div>
+		</div>
+		<div class="well">
+			<div class="review-infos">
+				<div class="pull-left">
+					<div class="review-user-avatar glyphicon glyphicon-user"></div>
+					<div class="review-user">
+						<div><a href="#">Autre d'utilisateur</a></div>
+						<div>09/18/2015</div>
+					</div>
+				</div>
+				<div class="pull-right">
+					<div class="ratingStars-small">
+						<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span>
+						<span class="helper">(3/5)</span>
+					</div>
+				</div>
+			</div>
+			<div class="review-content">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet semper turpis. Donec tempor diam et nunc finibus congue. Donec aliquet ac dui non tempus. Aliquam laoreet turpis vel ultrices pellentesque. Nullam sed aliquet nisi, quis rhoncus mi. Curabitur eu porta justo, a semper neque. Nam auctor tellus at orci porta, eu dictum justo porttitor. Aenean vitae dolor in ligula feugiat pretium vel in massa. Nunc pulvinar lorem sit amet felis placerat placerat. Ut faucibus arcu non fermentum imperdiet. Donec id nisi dignissim, tempor sem vel, viverra est. Maecenas eu egestas libero, at tempus metus.
+			</div>
+		</div>
 		<nav class="pageNav" aria-label="Page navigation">
 			<ul class="pagination">
 				<li>
@@ -87,3 +188,33 @@
 	</div>
 	<div class="col-sm-2"></div>
 </div>
+
+@section Scripts{
+	<script>
+		$(document).ready(function () {
+			$(".ratingStars-big .glyphicon").click(function () {
+				var score = $(this).attr("score");
+				$(".ratingStars-big .glyphicon").removeClass("active");
+				$(".ratingStars-big .glyphicon:lt("+score+")").addClass("active");
+			});
+
+			$(".addToFavorites").click(function () {
+				$(".addToFavorites .glyphicon").toggleClass("active");
+				$(".addToFavorites .glyphicon").toggleClass("glyphicon-heart");
+				$(".addToFavorites .glyphicon").toggleClass("glyphicon-heart-empty");
+				$(".addToFavorites .helper.add").toggleClass("hidden");
+				$(".addToFavorites .helper.remove").toggleClass("hidden");
+			});
+
+			$(".component").click(function () {
+				$(".component").removeClass("selected");
+				$(this).addClass("selected");
+			});
+
+			$("#submit-review").click(function () {
+				$("#review-demo").slideDown();
+				$("#review-demo .review-content").text($("#review-content-field").val());
+			});
+		});
+</script>
+}
