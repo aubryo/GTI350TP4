@@ -8,7 +8,30 @@
 
 <link href="~/Content/config-style.css" rel="stylesheet" />
 <body>
-    
+    <div class="col-md-2" style="position:fixed;bottom:70px;left:0;" id="filterPanel">
+        <div id="panelFilter" class="panel panel-default" style="display:none">
+            <div class="panel-heading">
+                <strong class="">Filtre personnalisé</strong>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="build-name">Par nom :</label>
+                    <input type="text" class="form-control" id="build-name" placeholder="Nom de la pièce" />
+                </div>
+                <div class="form-group">
+                    <label for="build-name">Par marque :</label>
+                    <input type="text" class="form-control" id="build-author" placeholder="Nom marque" />
+                </div><hr /><div class="form-group">
+                    <label>Par budget entre :</label><div class="col-md-12">
+                        <input type="number" class="form-control col-md-6" id="build-pricing-min" placeholder="0" step="100" style="max-width:40%;margin-left:-20px" />
+                        <div class="col-md-2" style="margin-top:10px">et</div>
+                        <input type="number" class="form-control col-md-6" id="build-pricing-max" placeholder="∞" step="100" style="max-width:40%;margin-left:20px" />
+                    </div>
+                </div> <div><button id="activeFilter" type="button" class="btn btn-default" style="margin-top:20px;margin-left:35px">Activer filtre</button></div>
+            </div>
+        </div>
+    </div>
+
     <div style="margin:0 auto;width:90%;">
         <div id="configuration" class="container img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">
             <div class="row">
@@ -19,7 +42,10 @@
                         @Html.ValidationMessageFor(m => m.configName, "", new { @class = "text-danger" })
                     </div>
                     <div class="col-md-3">
-                        @Html.ActionLink("Sauvegarder", "SaveConfiguration", "Account", null, new { @class = "btn btn-default", style = "display:block;margin:0 auto;margin-top:15px" })
+                        <input id="save" type="button" class="btn btn-primary" value="Sauvegarder" style="display:block;margin:0 auto;margin-top:15px">
+
+
+
                     </div>
                 </div>
 
@@ -51,7 +77,7 @@
                             <img src="http://findicons.com/files/icons/76/icandy_junior/128/pc_case.png" style="max-height:100px;max-width:100px;" />
                         </a>
                         <div class="step-progression-footer">
-                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-green/bfa/bfa_check-circle/bfa_check-circle_simple-green_512x512.png" style="max-height:100%;max-width:100%" />
+                            <img src="http://cdn.mysitemyway.com/icons-watermarks/simple-red/bfa/bfa_check-circle/bfa_check-circle_simple-red_512x512.png" style="max-height:100%;max-width:100%" />
 
                         </div>
 
@@ -138,7 +164,7 @@
                     </div>
 
                 </div>
-                <div id="peripherique" step="7" selected="false" class="col-sm-2" style="padding:0;max-width:141px;">
+               @* <div id="peripherique" step="7" selected="false" class="col-sm-2" style="padding:0;max-width:141px;">
                     <div class="step-progression-block">
                         <div class="step-progression-header">
                             <span>Périphériques</span>
@@ -153,7 +179,7 @@
 
                     </div>
 
-                </div>
+                </div>*@
             </div>
             <h3>Selection piece</h3>
             <div id="pieces" class="img-rounded" style="margin:0 auto; width:100%;border:groove gray; position:relative; overflow:hidden">

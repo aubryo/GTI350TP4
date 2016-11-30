@@ -194,8 +194,9 @@
 		$(document).ready(function () {
 			$(".ratingStars-big .glyphicon").click(function () {
 				var score = $(this).attr("score");
-				$(".ratingStars-big .glyphicon").removeClass("active");
-				$(".ratingStars-big .glyphicon:lt("+score+")").addClass("active");
+				$(".ratingStars-big .glyphicon").removeClass("active").removeClass("glyphicon-star").addClass("glyphicon-star-empty");
+				$(".ratingStars-big .glyphicon:lt(" + score + ")").removeClass("glyphicon-star-empty").addClass("glyphicon-star").addClass("active");
+				$(".ratingStars-big .helper").text("(" + score + "/5)");
 			});
 
 			$(".addToFavorites").click(function () {
