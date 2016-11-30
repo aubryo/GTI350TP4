@@ -112,6 +112,10 @@ a.buildPageUrl {
 	color: #aa0000;
 }
 
+.addToFavorites a, .addToFavorites a:hover, .addToFavorites a:active {
+	text-decoration: none;
+}
+
 .ratingStars-big .glyphicon.active {
 	text-decoration: underline;
 }
